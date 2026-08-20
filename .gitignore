@@ -34,8 +34,13 @@ CMakeCache.txt
 CMakeFiles/
 cmake_install.cmake
 CMakeFiles
+# 仅忽略自动生成的 Makefile；网关侧手写构建脚本需入库
 Makefile
+!code/Makefile
 *.cmake.user
+
+# === 网关编译产物（code/，make 生成） ===
+gateway_modbus_master
 
 # === 编辑器 / IDE ===
 .vscode/
