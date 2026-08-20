@@ -1,0 +1,57 @@
+# === 构建产物 ===
+build/
+output/
+out/
+*.o
+*.obj
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+*.d
+*.su
+
+# === Keil / MDK (STM32) ===
+*.uvguix.*
+*.uvgui.*
+*.uvoptx
+*.uvopt
+*.scvd
+*.dbgconf
+JLinkLog.txt
+*.bak
+
+# === STM32CubeIDE / Eclipse ===
+.metadata/
+*.launch
+.settings/
+*.cproject
+*.project
+
+# === CMake / 交叉编译 ===
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CMakeFiles
+Makefile
+*.cmake.user
+
+# === 编辑器 / IDE ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# === 日志 / 临时 ===
+*.log
+*.tmp
+
+# === OneNET / MQTT 本地凭证（切勿入库）===
+*.crt
+*.key
+secrets/
+.env
