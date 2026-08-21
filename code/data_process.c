@@ -136,6 +136,13 @@ static void proc_send_to_store(int idx, const EnvRegisters *raw, const EnvProc *
     mbox_send(g_proc_mbox, TH_STORE_NAME, MSG_STORE_NODE, &sm, sizeof(sm));
 }
 
+/* 处理线程 → MQTT 线程：通知有新数据，触发全节点上报 */
+static void proc_send_to_mqtt(int idx)
+{
+    uint8_t dummy = (uint8_t)idx;
+    mbox_send(g_proc_mbox, TH_MQTT_NAME, MSG_MQTT_REPORT, &dummy, 1);
+}
+
 /* =====================================================================
  * proc_thread - 处理线程入口
  * ---------------------------------------------------------------------
@@ -164,6 +171,7 @@ void *proc_thread(void *arg)
                 if (node_snapshot_get(msg.idx, &s) == 0) {
                     proc = s.proc;
                     proc_send_to_store(msg.idx, &msg.env, &proc);
+                    proc_send_to_mqtt(msg.idx);
                 }
             }
         }

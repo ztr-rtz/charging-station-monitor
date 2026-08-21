@@ -205,6 +205,41 @@ int mbox_recv(mbox_t *m, uint32_t *type, void *buf, uint16_t *len)
     return 0;
 }
 
+/* ---------------- 非阻塞接收 ---------------- */
+int mbox_recv_nowait(mbox_t *m, uint32_t *type, void *buf, uint16_t *len)
+{
+    if (m == NULL || type == NULL || buf == NULL || len == NULL) {
+        return -1;
+    }
+
+    pthread_mutex_lock(&m->rmutex);
+    MboxNode *node = mbox_self_node(m);
+    pthread_mutex_unlock(&m->rmutex);
+    if (node == NULL) {
+        return -1;
+    }
+
+    pthread_mutex_lock(&node->qmutex);
+    if (node->count == 0) {
+        pthread_mutex_unlock(&node->qmutex);
+        return -1;   /* 队列空，立即返回（不阻塞） */
+    }
+
+    MboxMsg *msg = &node->slots[node->head];
+    *type = msg->type;
+    uint16_t n = (msg->len > MBOX_DATA_LEN) ? MBOX_DATA_LEN : msg->len;
+    if (n > 0) {
+        memcpy(buf, msg->data, n);
+    }
+    *len = n;
+
+    node->head = (node->head + 1) % MBOX_MAX_MSG;
+    node->count--;
+
+    pthread_mutex_unlock(&node->qmutex);
+    return 0;
+}
+
 /* ---------------- 注销单个线程 ---------------- */
 int mbox_unregister(mbox_t *m, const char *name)
 {

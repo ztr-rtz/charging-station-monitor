@@ -13,10 +13,12 @@
 #include <stdint.h>
 #include "mbox.h"
 #include "modbus_env.h"
+#include "mqtt_report.h"
 
 /* ---- 消息类型定义 ---- */
 #define MSG_ENV_DATA    1   /* 采集 → 处理：一节点环境数据      */
 #define MSG_STORE_NODE  2   /* 处理 → 存储：一节点(原始+滤波)入库 */
+#define MSG_MQTT_REPORT 3   /* 处理 → MQTT：通知上报（触发全节点上报） */
 
 /* 采集→处理 的消息负载（装入 MboxMsg.data，定长） */
 typedef struct {
@@ -28,6 +30,7 @@ typedef struct {
 #define TH_PROC_NAME   "proc"
 #define TH_STORE_NAME  "store"
 #define TH_UI_NAME     "ui"
+#define TH_MQTT_NAME   "mqtt"
 
 /* 处理线程入口：配合 mbox_register(m, "proc", proc_thread, m) 使用。
  * 阻塞 recv → handle_env_msg(滤波/量程/告警) → 写快照 → 转发存储。 */

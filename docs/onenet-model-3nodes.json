@@ -1,0 +1,335 @@
+{
+  "version": "1.0",
+  "profile": {
+    "industryId": "1",
+    "sceneId": "14",
+    "categoryId": "313",
+    "productId": "5gScvSra72"
+  },
+  "properties": [
+    {
+      "identifier": "node1_temp",
+      "name": "节点1温度",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "节点1温度",
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "max": "100",
+          "min": "-50",
+          "step": "",
+          "unit": "摄氏度 / °C"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "node1_humi",
+      "name": "节点1湿度",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "节点1湿度",
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "max": "100",
+          "min": "0",
+          "step": "",
+          "unit": "相对湿度 / %RH"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "node1_smoke",
+      "name": "节点1烟雾",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "节点1烟雾",
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "max": "1000",
+          "min": "0",
+          "step": "",
+          "unit": "百万分率 / ppm"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "node1_volt",
+      "name": "节点1电压",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "节点1电压",
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "max": "1000",
+          "min": "0",
+          "step": "",
+          "unit": "伏特 / V"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "node1_current",
+      "name": "节点1电流",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "节点1电流",
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "max": "1000",
+          "min": "0",
+          "step": "",
+          "unit": "安培 / A"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "node1_alarm",
+      "name": "节点1告警状态",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "节点1告警状态",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "1",
+          "min": "0",
+          "step": ""
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "node2_temp",
+      "name": "节点2温度",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "节点2温度",
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "max": "100",
+          "min": "-50",
+          "step": "",
+          "unit": "摄氏度 / °C"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "node2_humi",
+      "name": "节点2湿度",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "节点2湿度",
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "max": "100",
+          "min": "0",
+          "step": "",
+          "unit": "相对湿度 / %RH"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "node2_smoke",
+      "name": "节点2烟雾",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "节点2烟雾",
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "max": "1000",
+          "min": "0",
+          "step": "",
+          "unit": "百万分率 / ppm"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "node2_volt",
+      "name": "节点2电压",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "节点2电压",
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "max": "1000",
+          "min": "0",
+          "step": "",
+          "unit": "伏特 / V"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "node2_current",
+      "name": "节点2电流",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "节点2电流",
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "max": "1000",
+          "min": "0",
+          "step": "",
+          "unit": "安培 / A"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "node2_alarm",
+      "name": "节点2告警状态",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "节点2告警状态",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "1",
+          "min": "0",
+          "step": ""
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "node3_temp",
+      "name": "节点3温度",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "节点3温度",
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "max": "100",
+          "min": "-50",
+          "step": "",
+          "unit": "摄氏度 / °C"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "node3_humi",
+      "name": "节点3湿度",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "节点3湿度",
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "max": "100",
+          "min": "0",
+          "step": "",
+          "unit": "相对湿度 / %RH"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "node3_smoke",
+      "name": "节点3烟雾",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "节点3烟雾",
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "max": "1000",
+          "min": "0",
+          "step": "",
+          "unit": "百万分率 / ppm"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "node3_volt",
+      "name": "节点3电压",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "节点3电压",
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "max": "1000",
+          "min": "0",
+          "step": "",
+          "unit": "伏特 / V"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "node3_current",
+      "name": "节点3电流",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "节点3电流",
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "max": "1000",
+          "min": "0",
+          "step": "",
+          "unit": "安培 / A"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "node3_alarm",
+      "name": "节点3告警状态",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "节点3告警状态",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "1",
+          "min": "0",
+          "step": ""
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    }
+  ],
+  "events": [],
+  "services": [],
+  "combs": []
+}

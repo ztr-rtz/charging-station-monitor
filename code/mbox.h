@@ -59,6 +59,10 @@ int mbox_send(mbox_t *m, const char *to, uint32_t type,
  * 成功返回 0，把负载复制到 buf 并把类型/长度回填到 type/len。 */
 int mbox_recv(mbox_t *m, uint32_t *type, void *buf, uint16_t *len);
 
+/* 从当前线程自己的队列接收一条消息（非阻塞）。
+ * 队列为空立即返回 -1；有消息返回 0。用于定时轮询场景（如 5s 聚合上报）。 */
+int mbox_recv_nowait(mbox_t *m, uint32_t *type, void *buf, uint16_t *len);
+
 /* 注销一个线程并回收其队列/锁/条件变量 */
 int mbox_unregister(mbox_t *m, const char *name);
 

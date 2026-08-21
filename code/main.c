@@ -32,6 +32,7 @@
 #include "data_process.h"
 #include "storage.h"
 #include "lvgl_ui.h"
+#include "mqtt_report.h"
 
 /* ---------------- 采集参数（FR-G04 / FR-G05） ---------------- */
 #define MAX_NODES      32        /* 最多节点数                      */
@@ -270,6 +271,11 @@ int main(int argc, char **argv)
     /* 展示线程（LVGL）——内容后续填充 */
     if (mbox_register(g_mbox, TH_UI_NAME, lvgl_ui_thread, g_mbox) != 0) {
         fprintf(stderr, "注册展示线程失败\n");
+        return -1;
+    }
+    /* 上报线程（MQTT） */
+    if (mbox_register(g_mbox, TH_MQTT_NAME, mqtt_thread, g_mbox) != 0) {
+        fprintf(stderr, "注册MQTT线程失败\n");
         return -1;
     }
 

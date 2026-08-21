@@ -7,8 +7,8 @@
 
 CC       ?= arm-linux-gnueabihf-gcc
 CFLAGS   := -std=c99 -Wall -Wextra -O2
-LDFLAGS  := -lpthread -lsqlite3
-SOURCES  := main.c uart.c modbus_env.c node_snapshot.c mbox.c data_process.c filter.c alert.c storage.c lvgl_ui.c
+LDFLAGS  := -lpthread -lsqlite3 -lpaho-mqtt3c
+SOURCES  := main.c uart.c modbus_env.c node_snapshot.c mbox.c data_process.c filter.c alert.c storage.c lvgl_ui.c mqtt_report.c
 OBJ      := gateway_modbus_master
 
 $(OBJ): $(SOURCES)
