@@ -8,6 +8,7 @@
 
 ## 2026-08-21
 
+- 18:27 提交 `a3f69ab`（docs）：新增 development-log.md（本文件，按天开发日志）并归档此前全部提交
 - 18:23 提交 `345c9f1`（docs）：新增 CHANGELOG.md 版本变更日志（v0.1.0 ~ v0.1.2）
 - 18:21 提交 `ffb1223`（feat, v0.1.2）：上报域落地——MQTT 接入 OneNET + 三节点物模型
   - 新增 `code/mqtt_report.c/h`：paho-mqtt-c 客户端
